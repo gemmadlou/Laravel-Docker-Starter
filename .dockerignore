@@ -1,0 +1,19 @@
+# Ignore everything
+*
+
+# Allow files and folders with a pattern starting with !
+!app/**
+!bootstrap/**
+!config/**
+!database/**
+!docker/**
+!public/**
+!resources/**
+!routes/**
+
+!composer.json
+!composer.lock
+!yarn.lock
+!package.json
+!artisan
+!webpack.mix.js
