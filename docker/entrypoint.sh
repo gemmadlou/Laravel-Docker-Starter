@@ -39,8 +39,23 @@ case $1 in
   server)
     ./$0 permissions
     ./$0 decache
+    ./$0 db:migrate
 
     php-fpm
+  ;;
+
+  optimize)
+    php artisan config:cache
+    php artisan route:cache
+    php artisan view:cache
+  ;;
+
+  queue)
+    ./$0 permissions
+    ./$0 decache
+    ./$0 db:migrate
+
+    php artisan queue:work
   ;;
 
   *)
@@ -49,7 +64,5 @@ case $1 in
   ;;
 
 esac
-
-echo "Completed app entrypoint!"
 
 exit 0
